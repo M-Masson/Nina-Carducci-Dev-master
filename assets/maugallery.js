@@ -13,6 +13,7 @@
       }
       $.fn.mauGallery.listeners(options);
 
+
       $(this)
         .children(".gallery-item")
         .each(function(index) {
@@ -29,6 +30,7 @@
           }
         });
 
+
       if (options.showTags) {
         $.fn.mauGallery.methods.showItemTags(
           $(this),
@@ -36,6 +38,7 @@
           tagsCollection
         );
       }
+
 
       $(this).fadeIn(500);
     });
@@ -56,6 +59,7 @@
         return;
       }
     });
+
 
     $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
     $(".gallery").on("click", ".mg-prev", () =>
@@ -145,18 +149,16 @@
           }
         });
       }
-      let index = 0,
-        next = null;
-
-      $(imagesCollection).each(function(i) {
-        if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i ;
+      let index = 0;
+      for(let i = 0; i<imagesCollection.length;i++){
+        if($(imagesCollection[i]).attr("src")===$(activeImage).attr("src")){
+          index = i;
+          break;
         }
-      });
-      next =
-        imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      }
+      let prevIndex = (index - 1 + imagesCollection.length) % imagesCollection.length;
+      let prev = imagesCollection[prevIndex];
+      $(".lightboxImage").attr("src", $(prev).attr("src"));
     },
     nextImage() {
       let activeImage = null;
@@ -184,15 +186,15 @@
           }
         });
       }
-      let index = 0,
-        next = null;
-
-      $(imagesCollection).each(function(i) {
-        if ($(activeImage).attr("src") === $(this).attr("src")) {
+      let index = 0;
+      for(let i = 0; i<imagesCollection.length;i++){
+        if($(imagesCollection[i]).attr("src")===$(activeImage).attr("src")){
           index = i;
+          break;
         }
-      });
-      next = imagesCollection[index] || imagesCollection[0];
+      }
+      let nextIndex = (index + 1) % imagesCollection.length;
+      let next = imagesCollection[nextIndex];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
@@ -227,6 +229,7 @@
       });
       var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
 
+
       if (position === "bottom") {
         gallery.append(tagsRow);
       } else if (position === "top") {
@@ -242,7 +245,9 @@
       $(".active-tag").removeClass("active active-tag");
       $(this).addClass("active-tag");
 
+
       var tag = $(this).data("images-toggle");
+
 
       $(".gallery-item").each(function() {
         $(this)
@@ -261,3 +266,6 @@
     }
   };
 })(jQuery);
+
+
+
