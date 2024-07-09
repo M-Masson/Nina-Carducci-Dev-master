@@ -224,6 +224,9 @@ form textarea {
     font-size: 1.2em;
     margin-bottom: 20px;
 }
+.img-fluid{
+    width: 100%;
+}
 input[type="submit"] {
     background-color: #BEB45A;
     padding: .5em 1em
