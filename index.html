@@ -20,11 +20,52 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./assets/maugallery.js"></script>
     <script src="./assets/scripts.js"></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "image": [
+            "https://m-masson.github.io/projet-4/assets/images/nina.jpg",
+            "https://m-masson.github.io/projet-4/assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.jpg",
+            "https://m-masson.github.io/projet-4/assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.jpg"
+           ],
+          "name": "Nina Carducci",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "68 avenue Alsace-Lorraine",
+            "addressLocality": "Bordeaux",
+            "postalCode": "33200",
+            "addressCountry": "FR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 44.846583494218976,
+            "longitude":-0.6065364977112192
+          },
+          "url": "https://www.example.com/restaurant-locations/manhattan",
+          "telephone": "05 56 67 78 89",
+          "priceRange": "$$$",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "10:00",
+              "closes": "19:00"
+            },
+          ],
+        }
+        </script>
 </head>
 <body>
 <header>
-    <div itemscope itemtype="https://schema.org/person">
-        <h1 class="name" itemprop="name">Nina Carducci</h1>
+    <div>
+        <h1 class="name">Nina Carducci</h1>
     </div>
     <div class="nav">  
         <ul>
@@ -65,13 +106,13 @@
             </button>
         </div>
     </div>
-    <div id="about" itemscope itemtype="https://schema.org/person">
+    <div id="about">
         <div class="picture left">
-            <img src="./assets/images/nina.jpg" alt="photo Nina Carducci" itemprop="image">
+            <img src="./assets/images/nina.jpg" alt="photo Nina Carducci">
         </div>
         <div id="about-me">
             <h2 class="about-me__title">A propos de moi</h2>
-            <p class="about-me__introduction">Devenir <span itemprop="jobTitle">photographe</span> était pour moi une évidence. Comme si j’y étais prédestiné. Saisir un moment, une émotion, une situation, un endroit, une lumière et les rendre immortels, voilà ce qui me fait vibrer.</p>
+            <p class="about-me__introduction">Devenir photographe était pour moi une évidence. Comme si j’y étais prédestiné. Saisir un moment, une émotion, une situation, un endroit, une lumière et les rendre immortels, voilà ce qui me fait vibrer.</p>
             <p>Nous passons notre vie à chercher le bonheur, et lorsque nous y touchons, nous n’avons qu’une envie : le figer au travers de photographies pour le savourer avec les personnes qui sont importantes à nos yeux, ou le partager au plus grand nombre.
             C’est ce que je vous propose : saisir ces merveilleux moments au travers de mon regard, mon approche, ma technique. Rendre ces moments immortels, afin que vous puissiez y puiser de l’amour, du bonheur, de la tendresse et de lumière à chaque fois que vous poserez les yeux sur vos photos.</p>
         </div>
@@ -103,33 +144,33 @@
     <div id="services">
         <h2 class="title">Mes services</h2>
         <div class="container">
-            <div class="service" itemscope itemtype="https://schema.org/Product">
+            <div class="service">
                 <div class="service__description">
-                    <h3 itemprop="name">Shooting photo</h3>
-                    <p itemprop="description">Pour capturer vos moments les plus précieux et garder un souvenir impérissable. Je me déplace en Île-de-France pour réaliser vos photos</p>
+                    <h3>Shooting photo</h3>
+                    <p>Pour capturer vos moments les plus précieux et garder un souvenir impérissable. Je me déplace en Île-de-France pour réaliser vos photos</p>
                 </div>
-                <div class="service__price" itemprop="offres" itemscope itemtype="https://schema.org/Offre">
-                    <h4 class="price"><span itemprop="prix" contenu="350">350</span><span itemprop="priceCurrency" content="EUR">€</span>/demi journée</h4>
+                <div class="service__price">
+                    <h4 class="price">350€/demi journée</h4>
                     <span>Matériel, déplacement inclus</span>
                 </div>
             </div>
-            <div class="service" itemscope itemtype="https://schema.org/Product">
+            <div class="service">
                 <div class="service__description">
-                    <h3 itemprop="name">Retouches</h3>
-                    <p itemprop="description">Vous souhaitez retoucher vos photos pour un résultat professionnel ? Bénéficier d’un rendu optimal pour vos publications</p>
+                    <h3>Retouches</h3>
+                    <p>Vous souhaitez retoucher vos photos pour un résultat professionnel ? Bénéficier d’un rendu optimal pour vos publications</p>
                 </div>
-                <div class="service__price" itemprop="offres" itemscope itemtype="https://schema.org/Offre">
-                    <h4 class="price"><span itemprop="prix" contenu="50">50</span><span itemprop="priceCurrency" content="EUR">€</span>/photo</h4>
+                <div class="service__price" itemprop="offres">
+                    <h4 class="price">50€/photo</h4>
                     <span>2 AR par photo</span>
                 </div>
             </div>
-            <div class="service" itemscope itemtype="https://schema.org/Product">
+            <div class="service">
                 <div class="service__description">
-                    <h3 itemprop="name">Album photos</h3>
-                    <p itemprop="description">Partagez avec vos proches et vos clients les photos des moments partagés ensemble à travers un album photo personnalisé</p>
+                    <h3>Album photos</h3>
+                    <p>Partagez avec vos proches et vos clients les photos des moments partagés ensemble à travers un album photo personnalisé</p>
                 </div>
-                <div class="service__price" itemprop="offres" itemscope itemtype="https://schema.org/Offre">
-                    <h4 class="price"><span itemprop="prix" contenu="400">400</span><span itemprop="priceCurrency" content="EUR">€</span> album A4</h4>
+                <div class="service__price">
+                    <h4 class="price">400€ album A4</h4>
                     <span>30 pages recto/verso</span>
                 </div>
             </div>
